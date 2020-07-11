@@ -10096,6 +10096,16 @@ hr.light {
   }
 }
 
+.navbar {
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.navbar-hide {
+    pointer-events: none;
+    opacity: 0;
+}
+
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);

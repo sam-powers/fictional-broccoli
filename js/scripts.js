@@ -44,6 +44,37 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
+        
+// element to detect scroll direction of
+const $el = $(window);
+
+// initialize last scroll position
+let lastY = $el.scrollTop();
+    
+$el.on('scroll', function() {
+    // get current scroll position
+    const currY = $el.scrollTop();
+        
+    // determine current scroll direction
+    const y = (currY > lastY) ? 'down' : ((currY === lastY) ? 'none' : 'up');
+
+    // do something here...
+    console.log(y);
+    
+    if ((y === "down" | y === "none" ) &  $("#mainNav").offset().top > 800) {
+         $('.navbar').addClass("navbar-hide"); 
+    } else {
+        
+    $('.navbar').removeClass("navbar-hide");
+
+    }
+
+    // update last scroll position to current position
+    lastY = currY;
+});
+
+        
+        
   // Magnific popup calls
   $('#portfolio').magnificPopup({
     delegate: 'a',
